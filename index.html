@@ -184,24 +184,20 @@
 <script>
     var fireballSize = 22;
     var getFireballSpeed = function (left) {
-        if(left) {
-            return 5;
-        } else{
-            return 2;
-        }
-    };
+      return left ? 5 : 2
+        };
     var wizardSpeed = 3;
     var wizardWidth = 70;
     var getWizardHeight = function (WizardWidth) {
         var wizardHeight = 1.337 * wizardWidth;
-        return wizardHeight;
-    };
+        return wizardHeight;        
+    };    
     function getWizardX(width) {
-        var wizardX = width / 2;
-        return wizardX
+        var wizardX = (width / 2) - (wizardWidth / 2);
+        return wizardX;        
     };
     function getWizardY(height) {
-        var wizardY = height / 3;
+        var wizardY = (height / 3) - (1.337 * wizardWidth);    //? я же не могу вызвать wizardHeight потому что -var- объявлена внутри фунции, или могу?
         return wizardY
     };
 </script>
